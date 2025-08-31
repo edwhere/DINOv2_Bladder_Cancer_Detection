@@ -110,17 +110,23 @@ in both cases, the validation accuracy can reach and exceed 95%.
   <img src="Figures/accuracy_60ep_ft.png" width="300" />
 </p>
 
+The corresponding loss-function learning curves are shown below. 
+<p>
+  <img src="Figures/loss_60ep_tl.png" width="300" />
+  <img src="Figures/loss_60ep_ft.png" width="300" />
+</p>
+
 An evaluation of the trained models using the test dataset returns test 
-accuracies significantly lower than those obtained for the validation dataset. Because, 
+accuracies significantly lower than those obtained for the validation dataset. Because 
 the validation dataset is never used in this example for adjusting weights, computing gradients, 
 or selecting hyperparameters, the difference of results is an indication that there is 
 some condition in the test data that makes classification more difficult. 
 
 When this condition is observed, a better approach to generate performance 
 results is to combine train, validation, and test datasets into a single collection, 
-and then use either K-fold partitioning to train K models or Monte Carlo cross-validation 
+and then use either K-fold cross-validation or Monte Carlo cross-validation 
 to train K models. These methods provide the average performance over K trials 
-regardless of selection of a validation/test dataset.  These methods also provide 
+regardless of selection of validation/test datasets.  These methods also provide 
 confidence intervals for the average performance estimates. We have not performed 
 this type of experiments yet. 
 
